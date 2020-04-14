@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from "styled-components";
 
 class FollowerCard extends React.Component {
     constructor(props) {
@@ -11,21 +12,41 @@ class FollowerCard extends React.Component {
     render() {
         return (
             this.props.followers.map( item => {
+                console.log(item);
                 return (
-                    <div>
-                        <img src={item.avatar_url} alt= "picture" />
-                        <div>
-                        <p>Name: {item.name}</p>
+                    <StyledDiv1>
+                        <StyledImg src={item.avatar_url} alt= "picture" />
+                        <StyledDiv2>
                         <p>User Name: {item.login}</p>
-                        <p>Following: {item.following}</p>
-                        <p>Followers: {item.followers}</p>
-                        </div>
-                    </div>
+                        <p>ID: {item.id}</p>
+                        <p>Node ID: {item.node_id}</p>
+                        </StyledDiv2>
+                    </StyledDiv1>
                 )
             }
            )
         )
 }
 }
+
+const StyledDiv1 = styled.div`
+display: flex;
+margin: 2%;
+padding: 2%;
+background-color: #6495ED;
+width: 20%;
+height: 30%;
+flex-direction: column;
+justify-content: center;
+`;
+
+const StyledDiv2 = styled.div`
+display: flex;
+flex-direction: column;
+`;
+
+const StyledImg = styled.img`
+height: 40vh;
+`
 
 export default FollowerCard;

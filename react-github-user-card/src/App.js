@@ -3,6 +3,7 @@ import './App.css';
 import UserCard from "./components/UserCard";
 import FollowerCard from "./components/FollowerCard";
 import axios from 'axios';
+import styled from "styled-components";
 
 class App extends React.Component {
   constructor() {
@@ -30,12 +31,21 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>
+      <StyledDiv1>
+        <h1>REACT GITHUB USER CARD</h1>
       <UserCard user={this.state.user}/>
+      <h2>FOLLOWERS</h2>
       <FollowerCard followers={this.state.followers}/>
-      </div>
+      </StyledDiv1>
     )
   }
 }
+
+const StyledDiv1 = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+`
 
 export default App;
