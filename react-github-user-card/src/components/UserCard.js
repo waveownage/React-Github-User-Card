@@ -3,12 +3,10 @@ import React from 'react';
 const UserCard = props => {
     return (
         <div>
-            <img src={props.user.html_url} />
+            <img src={props.user.avatar_url} alt= "picture" />
             <div>
                 <p>Name: {props.user.name}</p>
-                <p>UserName: {props.user.login}</p>
-                <p>Location: {props.user.location}</p>
-                <p>Bio: {props.user.bio}</p>
+                <p>User Name: {props.user.login}</p>
                 <p>Following: {props.user.following}</p>
                 <p>Followers: {props.user.followers}</p>
             </div>
